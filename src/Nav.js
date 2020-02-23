@@ -37,7 +37,7 @@ function Nav() {
         <MobileMenu
         showSlideMenu={showSlideMenu} 
         closeSlideMenu={closeSlideMenu} />
-        <Toolbar style={{ paddingTop: smDown ? 0 : 10, paddingRight : 16, paddingLeft : 16 }}>
+        <Toolbar style={smDown ? { paddingTop: 0, paddingRight : 16, paddingLeft : 16 } : {paddingTop : 10, paddingRight : 0, paddingLeft : 0}}>
         <div style={{ flexGrow: 1, display: smDown ? '' : 'none' }}>
           <div style={{ backgroundImage: `url(${discordLogoMobile})`, backgroundPosition: 'center', backgroundSize: 'cover', height: 30, width: 90 }} />
         </div>
