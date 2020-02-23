@@ -18,7 +18,7 @@ function MobileMenu({ showSlideMenu, closeSlideMenu, showSlide, slideExited }) {
       timeout={200}
     >
       <Paper style={{ backgroundColor: 'black' }}>
-        <List>
+        <List style={{paddingBottom : 0}}>
           <ListItem button >
             <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
               <div style={{ flexGrow: 1 }}>
@@ -28,36 +28,36 @@ function MobileMenu({ showSlideMenu, closeSlideMenu, showSlide, slideExited }) {
             </div>
           </ListItem>
           <Divider variant='fullWidth' style={{ backgroundColor: '#595959' }} />
-          <ListItem style={{ padding: '10px 0px' }}>
-            <ListItemText primaryTypographyProps={{ variant: 'subtitle2' }} style={{ textAlign: "center", color: 'white', margin: 0 }}>
+          <ListItem style={{ padding: '10px 0px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <p style={{color: 'white', fontWeight: 100, margin : 0, fontSize : 12 }}>
               Download
-              </ListItemText>
+            </p>
           </ListItem>
           <Divider variant='fullWidth' style={{ backgroundColor: '#595959' }} />
-          <ListItem style={{ padding: '10px 0px' }}>
-            <ListItemText primaryTypographyProps={{ variant: 'subtitle2' }} style={{ textAlign: "center", color: 'white', margin: 0 }}>
+          <ListItem style={{ padding: '10px 0px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <p style={{color: 'white', fontWeight: 100, margin : 0, fontSize : 12 }}>
               Nitro
-              </ListItemText>
+            </p>
           </ListItem>
           <Divider variant='fullWidth' style={{ backgroundColor: '#595959' }} />
-          <ListItem style={{ padding: '10px 0px' }}>
-            <ListItemText primaryTypographyProps={{ variant: 'subtitle2' }} style={{ textAlign: "center", color: 'white', margin: 0 }}>
+          <ListItem style={{ padding: '10px 0px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <p style={{ color: 'white', fontWeight: 100, margin : 0, fontSize : 12 }}>
               Jobs
-              </ListItemText>
+            </p>
           </ListItem>
           <Divider variant='fullWidth' style={{ backgroundColor: '#595959' }} />
           <ListItem style={{ padding: '10px 0px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Typography variant='subtitle2' style={{ color: 'white' }}>Developers</Typography>
+            <p style={{ color: 'white', fontWeight: 100, margin : 0, fontSize : 12 }}>Developers</p>
             <ExpandMoreIcon fontSize='small' style={{ color: 'white' }} />
           </ListItem>
           <Divider variant='fullWidth' style={{ backgroundColor: '#595959' }} />
           <ListItem style={{ padding: '10px 0px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Typography variant='subtitle2' style={{ color: 'white' }}>Community</Typography>
+            <p style={{ color: 'white', fontWeight: 100, margin : 0, fontSize : 12 }}>Community</p>
             <ExpandMoreIcon fontSize='small' style={{ color: 'white' }} />
           </ListItem>
           <Divider variant='fullWidth' style={{ backgroundColor: '#595959' }} />
           <ListItem style={{ padding: '10px 0px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Typography variant='subtitle2' style={{ color: 'white' }}>Support</Typography>
+            <p style={{ color: 'white', fontWeight: 100, margin : 0, fontSize : 12 }}>Support</p>
             <ExpandMoreIcon fontSize='small' style={{ color: 'white' }} />
           </ListItem>
           <ListItem style={{ padding: '10px 0px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -71,16 +71,3 @@ function MobileMenu({ showSlideMenu, closeSlideMenu, showSlide, slideExited }) {
 }
 
 export default MobileMenu;
-
-// <Divider style={{width : '100%'}} />
-// <Typography style={{textAlign : 'center', padding : '20px 0px'}}>Download</Typography>
-// <Divider style={{width : '100%'}} />
-// <Typography style={{textAlign : 'center', padding : '20px 0px'}}>Nitro</Typography>
-// <Divider style={{width : '100%'}} />
-// <Typography style={{textAlign : 'center', padding : '20px 0px'}}>Jobs</Typography>
-// <Divider style={{width : '100%'}} />
-// <Typography style={{textAlign : 'center', padding : '20px 0px'}}>Developers</Typography>
-// <Divider style={{width : '100%'}} />
-// <Typography style={{textAlign : 'center', padding : '20px 0px'}}>Community</Typography>
-// <Divider style={{width : '100%'}} />
-// <Typography style={{textAlign : 'center', padding : '20px 0px'}}>Support</Typography>
