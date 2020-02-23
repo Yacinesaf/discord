@@ -1,25 +1,72 @@
 import React from 'react';
-import { Slide, Paper, Divider, List, ListItem, ListItemText, ListItemIcon  } from '@material-ui/core';
+import { Slide, Paper, Divider, List, ListItem, ListItemText, ListItemIcon, Typography } from '@material-ui/core';
 import discordLogoMobile from './Discord-Logo+Wordmark-White.svg'
 import CloseIcon from '@material-ui/icons/Close';
+import TranslateIcon from '@material-ui/icons/Translate';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-function MobileMenu() {
+function MobileMenu({ showSlideMenu, closeSlideMenu, showSlide, slideExited }) {
+
+
+
   return (
-    <div>
-      <Slide>
-        <Paper style={{backgroundColor : 'black'}}>
-          <List>
-            <ListItem button >
-              
-            </ListItem>
-          </List>
-          <div style={{display : 'flex'}}>
-            <div style={{ backgroundImage: `url(${discordLogoMobile})`, backgroundPosition: 'center', backgroundSize: 'cover', height: 50, width: 150}} />
-            <CloseIcon style={{color : 'white'}} />
-          </div>
-        </Paper>
-      </Slide>
-    </div>
+    <Slide
+      onExited={closeSlideMenu}
+      style={{ position: "absolute", width: '100%', zIndex: 1 }}
+      direction='down'
+      in={showSlideMenu}
+      timeout={200}
+    >
+      <Paper style={{ backgroundColor: 'black' }}>
+        <List>
+          <ListItem button >
+            <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
+              <div style={{ flexGrow: 1 }}>
+                <div style={{ backgroundImage: `url(${discordLogoMobile})`, backgroundPosition: 'center', backgroundSize: 'cover', height: 30, width: 90 }} />
+              </div>
+              <CloseIcon style={{ color: 'white' }} onClick={closeSlideMenu} />
+            </div>
+          </ListItem>
+          <Divider variant='fullWidth' style={{ backgroundColor: '#595959' }} />
+          <ListItem style={{ padding: '10px 0px' }}>
+            <ListItemText primaryTypographyProps={{ variant: 'subtitle2' }} style={{ textAlign: "center", color: 'white', margin: 0 }}>
+              Download
+              </ListItemText>
+          </ListItem>
+          <Divider variant='fullWidth' style={{ backgroundColor: '#595959' }} />
+          <ListItem style={{ padding: '10px 0px' }}>
+            <ListItemText primaryTypographyProps={{ variant: 'subtitle2' }} style={{ textAlign: "center", color: 'white', margin: 0 }}>
+              Nitro
+              </ListItemText>
+          </ListItem>
+          <Divider variant='fullWidth' style={{ backgroundColor: '#595959' }} />
+          <ListItem style={{ padding: '10px 0px' }}>
+            <ListItemText primaryTypographyProps={{ variant: 'subtitle2' }} style={{ textAlign: "center", color: 'white', margin: 0 }}>
+              Jobs
+              </ListItemText>
+          </ListItem>
+          <Divider variant='fullWidth' style={{ backgroundColor: '#595959' }} />
+          <ListItem style={{ padding: '10px 0px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Typography variant='subtitle2' style={{ color: 'white' }}>Developers</Typography>
+            <ExpandMoreIcon fontSize='small' style={{ color: 'white' }} />
+          </ListItem>
+          <Divider variant='fullWidth' style={{ backgroundColor: '#595959' }} />
+          <ListItem style={{ padding: '10px 0px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Typography variant='subtitle2' style={{ color: 'white' }}>Community</Typography>
+            <ExpandMoreIcon fontSize='small' style={{ color: 'white' }} />
+          </ListItem>
+          <Divider variant='fullWidth' style={{ backgroundColor: '#595959' }} />
+          <ListItem style={{ padding: '10px 0px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Typography variant='subtitle2' style={{ color: 'white' }}>Support</Typography>
+            <ExpandMoreIcon fontSize='small' style={{ color: 'white' }} />
+          </ListItem>
+          <ListItem style={{ padding: '10px 0px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <TranslateIcon style={{ color: 'white' }} />
+            <ExpandMoreIcon fontSize='small' style={{ color: 'white' }} />
+          </ListItem>
+        </List>
+      </Paper>
+    </Slide>
   );
 }
 

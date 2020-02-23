@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Toolbar, Button, Divider } from '@material-ui/core';
 import discordLogoMobile from './Discord-Logo+Wordmark-White.svg'
 import discordLogo from './Discord-Logo-White.svg'
@@ -12,6 +12,7 @@ import NavMenus from './NavMenus'
 import { useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import MenuIcon from '@material-ui/icons/Menu';
+import MobileMenu from './MobileMenu';
 
 function Nav() {
 
@@ -24,15 +25,23 @@ function Nav() {
     color: '#ededed',
   }
   const menuItemsKeys = Object.keys(menuItems)
+  const [showSlideMenu, setShowSlideMenu] = useState(false);
+
+  const closeSlideMenu = () => {
+    setShowSlideMenu(false)
+  }
 
 
   return (
     <div>
-      <Toolbar style={{ paddingTop: smDown? 0 : 10 }}>
-        <div style={{flexGrow : 1, display: smDown ? '' : 'none' }}>
-          <div style={{ backgroundImage: `url(${discordLogoMobile})`, backgroundPosition: 'center', backgroundSize: 'cover', height: 30, width: 90}} />
+        <MobileMenu
+        showSlideMenu={showSlideMenu} 
+        closeSlideMenu={closeSlideMenu} />
+        <Toolbar style={{ paddingTop: smDown ? 0 : 10 }}>
+        <div style={{ flexGrow: 1, display: smDown ? '' : 'none' }}>
+          <div style={{ backgroundImage: `url(${discordLogoMobile})`, backgroundPosition: 'center', backgroundSize: 'cover', height: 30, width: 90 }} />
         </div>
-        <MenuIcon  style={{ color: 'white', display: smDown ? '' : 'none' }} />
+        <MenuIcon style={{ color: 'white', display: smDown ? '' : 'none' }} onClick={() => { setShowSlideMenu(true)}} />
         <div style={{ backgroundImage: `url(${discordLogo})`, backgroundPosition: 'center', backgroundSize: 'cover', height: 50, width: 50, display: smDown ? 'none' : '' }} />
         <div style={{ paddingLeft: 10, flexGrow: 1, display: smDown ? 'none' : 'flex' }}>
           <Button style={buttonStyle}>
@@ -66,7 +75,6 @@ function Nav() {
           </Button>
         </div>
       </Toolbar>
-
     </div>
   );
 }

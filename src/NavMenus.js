@@ -8,7 +8,6 @@ function NavMenus({ menuItemKey, buttonStyle }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = event => {
-    console.log('sd')
     setAnchorEl(event.currentTarget);
   };
 
