@@ -1,13 +1,14 @@
 import React from 'react';
 import { Menu, MenuItem, Button } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import {menuItems} from './menuItems'
-
+import { menuItems } from './menuItems'
 
 function NavMenus({ menuItemKey, buttonStyle }) {
+
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = event => {
+    console.log('sd')
     setAnchorEl(event.currentTarget);
   };
 
@@ -17,10 +18,12 @@ function NavMenus({ menuItemKey, buttonStyle }) {
 
   return (
     <div>
-      <Button style={buttonStyle} onClick={handleClick}>
-        {menuItemKey}
-        <ExpandMoreIcon fontSize='small' />
-      </Button>
+      <div>
+        <Button style={buttonStyle} onClick={handleClick}>
+          {menuItemKey}
+          <ExpandMoreIcon fontSize='small' />
+        </Button>
+      </div>
       <Menu
         getContentAnchorEl={null}
         transformOrigin={{

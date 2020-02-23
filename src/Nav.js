@@ -1,6 +1,7 @@
 import React from 'react';
 import { Toolbar, Button, Divider } from '@material-ui/core';
-import discordLogo from './Discord-Logo+Wordmark-White.svg'
+import discordLogoMobile from './Discord-Logo+Wordmark-White.svg'
+import discordLogo from './Discord-Logo-White.svg'
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -8,46 +9,62 @@ import TranslateIcon from '@material-ui/icons/Translate';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { menuItems } from './menuItems'
 import NavMenus from './NavMenus'
-
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import MenuIcon from '@material-ui/icons/Menu';
 
 function Nav() {
+
+  const theme = useTheme();
+  const mdDown = useMediaQuery(theme.breakpoints.down('md'));
+  const smDown = useMediaQuery(theme.breakpoints.down('sm'));
+
   const buttonStyle = {
     textTransform: 'none',
-    color: '#fff',
+    color: '#ededed',
   }
   const menuItemsKeys = Object.keys(menuItems)
-  
+
+
   return (
     <div>
-      <Toolbar style={{ paddingTop: 10 }}>
-        <div style={{ backgroundImage: `url(${discordLogo})`, backgroundPosition: 'center', backgroundSize: 'cover', height: 50, width: 150 }} />
-        <div style={{ paddingLeft: 10, flexGrow: 1, display : 'flex' }}>
+      <Toolbar style={{ paddingTop: smDown? 0 : 10 }}>
+        <div style={{flexGrow : 1, display: smDown ? '' : 'none' }}>
+          <div style={{ backgroundImage: `url(${discordLogoMobile})`, backgroundPosition: 'center', backgroundSize: 'cover', height: 30, width: 90}} />
+        </div>
+        <MenuIcon  style={{ color: 'white', display: smDown ? '' : 'none' }} />
+        <div style={{ backgroundImage: `url(${discordLogo})`, backgroundPosition: 'center', backgroundSize: 'cover', height: 50, width: 50, display: smDown ? 'none' : '' }} />
+        <div style={{ paddingLeft: 10, flexGrow: 1, display: smDown ? 'none' : 'flex' }}>
           <Button style={buttonStyle}>
             Download
-        </Button>
+          </Button>
           <Button style={buttonStyle}>
             Nitro
-        </Button>
+          </Button>
           <Button style={buttonStyle}>
             Jobs
-        </Button>
-          <div style={{display : 'flex'}}>
+          </Button>
+          <div style={{ display: 'flex' }}>
             {menuItemsKeys.map((x, i) => (
               <NavMenus key={i} buttonStyle={buttonStyle} menuItemKey={x} />
             ))}
           </div>
         </div>
-        <FacebookIcon style={{ color: 'white' }} />
-        <TwitterIcon style={{ color: 'white', padding: '0px 10px' }} />
-        <InstagramIcon style={{ color: 'white' }} />
-        <Button variant='outlined' style={Object.assign({}, buttonStyle, { borderRadius: 20, borderColor: 'white', margin: '0px 15px', padding: '5px 20px' })}>
-          Login
-      </Button>
-        <Divider style={{ transform: 'rotate(90deg)', width: 18, backgroundColor: 'white' }} />
-        <Button style={buttonStyle}>
-          <TranslateIcon />
-          <ExpandMoreIcon />
-        </Button>
+        <div style={{ display: mdDown ? 'none' : '', paddingTop: 6 }}>
+          <FacebookIcon style={{ color: '#ededed' }} />
+          <TwitterIcon style={{ color: '#ededed', padding: '0px 10px' }} />
+          <InstagramIcon style={{ color: '#ededed' }} />
+        </div>
+        <div style={{ display: smDown ? 'none' : 'flex', alignItems: 'center' }}>
+          <Button variant='outlined' style={Object.assign({}, buttonStyle, { borderRadius: 20, borderColor: '#ededed', margin: '0px 15px', padding: '5px 20px' })}>
+            Login
+          </Button>
+          <Divider style={{ transform: 'rotate(90deg)', width: 18, backgroundColor: '#ededed' }} />
+          <Button style={buttonStyle}>
+            <TranslateIcon />
+            <ExpandMoreIcon />
+          </Button>
+        </div>
       </Toolbar>
 
     </div>
