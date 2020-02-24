@@ -5,7 +5,7 @@ import TextNextToFloatingImage from './TextNextToFloatingImage';
 import FloatingImage from './FloatingImage';
 import { useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-
+import DownloadVersionCards from './DownloadVersionCards'
 function Main() {
 
   const theme = useTheme();
@@ -26,6 +26,9 @@ function Main() {
               <FloatingImage />
             </Grid>
           </Grid>
+        </Grid>
+        <Grid item xs={10} style={{paddingTop : 100}}>
+          <DownloadVersionCards />
         </Grid>
       </Grid>
     </div>
