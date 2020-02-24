@@ -28,35 +28,35 @@ function MobileMenu({ showSlideMenu, closeSlideMenu, showSlide, slideExited }) {
             </div>
           </ListItem>
           <Divider variant='fullWidth' style={{ backgroundColor: '#595959' }} />
-          <ListItem style={{ padding: '10px 0px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <ListItem style={{ padding: '10px 0px', display: 'flex', justifyContent: 'center' }}>
             <p style={{color: 'white', fontWeight: 100, margin : 0, fontSize : 12 }}>
               Download
             </p>
           </ListItem>
           <Divider variant='fullWidth' style={{ backgroundColor: '#595959' }} />
-          <ListItem style={{ padding: '10px 0px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <ListItem style={{ padding: '10px 0px', display: 'flex', justifyContent: 'center' }}>
             <p style={{color: 'white', fontWeight: 100, margin : 0, fontSize : 12 }}>
               Nitro
             </p>
           </ListItem>
           <Divider variant='fullWidth' style={{ backgroundColor: '#595959' }} />
-          <ListItem style={{ padding: '10px 0px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <ListItem style={{ padding: '10px 0px', display: 'flex', justifyContent: 'center' }}>
             <p style={{ color: 'white', fontWeight: 100, margin : 0, fontSize : 12 }}>
               Jobs
             </p>
           </ListItem>
           <Divider variant='fullWidth' style={{ backgroundColor: '#595959' }} />
-          <ListItem style={{ padding: '10px 0px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <ListItem style={{ padding: '10px 0px', display: 'flex', alignContent: 'center', justifyContent: 'center' }}>
             <p style={{ color: 'white', fontWeight: 100, margin : 0, fontSize : 12 }}>Developers</p>
-            <ExpandMoreIcon fontSize='small' style={{ color: 'white' }} />
+            <ExpandMoreIcon fontSize='small' style={{ color: 'white'}} />
           </ListItem>
           <Divider variant='fullWidth' style={{ backgroundColor: '#595959' }} />
-          <ListItem style={{ padding: '10px 0px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <ListItem style={{ padding: '10px 0px', display: 'flex', alignContent: 'center', justifyContent: 'center' }}>
             <p style={{ color: 'white', fontWeight: 100, margin : 0, fontSize : 12 }}>Community</p>
             <ExpandMoreIcon fontSize='small' style={{ color: 'white' }} />
           </ListItem>
           <Divider variant='fullWidth' style={{ backgroundColor: '#595959' }} />
-          <ListItem style={{ padding: '10px 0px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <ListItem style={{ padding: '10px 0px', display: 'flex', alignContent: 'center', justifyContent: 'center' }}>
             <p style={{ color: 'white', fontWeight: 100, margin : 0, fontSize : 12 }}>Support</p>
             <ExpandMoreIcon fontSize='small' style={{ color: 'white' }} />
           </ListItem>

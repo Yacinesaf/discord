@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from './Nav';
 import { Grid } from '@material-ui/core';
-import BodyContent from './BodyContent';
+import TextNextToFloatingImage from './TextNextToFloatingImage';
 import FloatingImage from './FloatingImage';
 import { useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
@@ -9,20 +9,20 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 function Main() {
 
   const theme = useTheme();
-  const mdDown = useMediaQuery(theme.breakpoints.down('md'));
   const smDown = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <div style={{ backgroundColor: '#7289da', height: '100vh' }}>
       <Grid container justify='center'>
-        <Grid item xs={10}>
+        <Grid item xs={12} sm={12} xl={10} style={{padding : smDown ? 0 : '0px 15px'}}>
           <Nav />
-          <Grid container>
-          <Grid item xs={2}></Grid>
-            <Grid item xs={4} style={{marginTop : 150}}>
-              <BodyContent />
+        </Grid>
+        <Grid item xs={12} md={11} lg={11}>
+          <Grid container justify='center'>
+            <Grid item xs={3} style={{ marginTop: smDown ? 50 : 150, minWidth : 285, marginRight : smDown ? 0 : 30 }}>
+              <TextNextToFloatingImage />
             </Grid>
-            <Grid item xs={6} style={{marginTop : 50}}>
+            <Grid item xl={5} lg={6} md={7} sm={11} xs={11}  style={{ marginTop: smDown ? 30 :  50 }}>
               <FloatingImage />
             </Grid>
           </Grid>

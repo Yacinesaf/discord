@@ -59,7 +59,7 @@ function Nav() {
             ))}
           </div>
         </div>
-        <div style={{ display: mdDown ? 'none' : '', paddingTop: 6 }}>
+        <div style={{ display: smDown ? 'none' : '', paddingTop: 6 }}>
           <FacebookIcon style={{ color: '#ededed' }} />
           <TwitterIcon style={{ color: '#ededed', padding: '0px 10px' }} />
           <InstagramIcon style={{ color: '#ededed' }} />
