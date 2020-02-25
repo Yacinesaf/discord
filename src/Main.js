@@ -8,11 +8,11 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import DownloadVersionCards from './DownloadVersionCards'
 import BottomLinks from './BottomLinks';
 import BottomLinksMobile from './BottomLinksMobile';
-
+import { useParams } from 'react-router-dom'
 
 function Main() {
-
-  const theme = useTheme();
+  let { title } = useParams('Windows');
+  const theme = useTheme(); 
   const smDown = useMediaQuery(theme.breakpoints.down('sm'));
   const mdDown = useMediaQuery(theme.breakpoints.down('md'));
   return (
@@ -24,7 +24,7 @@ function Main() {
         <Grid item xs={12} md={11} lg={11}>
           <Grid container justify='center'>
             <Grid item xs={3} style={{ marginTop: smDown ? 50 : 150, minWidth: 285, marginRight: smDown ? 0 : 30 }}>
-              <TextNextToFloatingImage />
+              <TextNextToFloatingImage title={title} />
             </Grid>
             <Grid item xl={5} lg={6} md={7} sm={11} xs={11} style={{ marginTop: smDown ? 30 : 50 }}>
               <FloatingImage />

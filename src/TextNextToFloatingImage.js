@@ -4,7 +4,7 @@ import { useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 
-function TextNextToFloatingImage() {
+function TextNextToFloatingImage({title}) {
 
   const theme = useTheme();
   const smDown = useMediaQuery(theme.breakpoints.down('sm'));
@@ -13,7 +13,7 @@ function TextNextToFloatingImage() {
   return (
       <div>
         <p style={{ color: 'white', display: 'block', fontWeight: 500, margin: 0, fontSize : 25 }} >
-          Get Discord for Windows
+          {`Get Discord for ${title}`}
         </p>
         <div style={{ display: 'flex', paddingTop: 5, justifyContent : smDown ? 'center' : '' }}>
           <Typography style={{ color: 'hsla(0,0%,100%,.6)', fontSize: 12 }} >
