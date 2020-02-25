@@ -1,5 +1,5 @@
 import React from 'react';
-import { Slide, Paper, Divider, List, ListItem, ListItemText, ListItemIcon, Typography } from '@material-ui/core';
+import { Slide, Paper, Divider, List, ListItem } from '@material-ui/core';
 import discordLogoMobile from './Discord-Logo+Wordmark-White.svg'
 import CloseIcon from '@material-ui/icons/Close';
 import TranslateIcon from '@material-ui/icons/Translate';

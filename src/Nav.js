@@ -17,8 +17,8 @@ import MobileMenu from './MobileMenu';
 function Nav() {
 
   const theme = useTheme();
-  const mdDown = useMediaQuery(theme.breakpoints.down('md'));
   const smDown = useMediaQuery(theme.breakpoints.down('sm'));
+  const lgUp = useMediaQuery(theme.breakpoints.up('lg'));
 
   const buttonStyle = {
     textTransform: 'none',
@@ -34,14 +34,17 @@ function Nav() {
 
   return (
     <div>
+      {lgUp ? null : 
         <MobileMenu
-        showSlideMenu={showSlideMenu} 
+        showSlideMenu={showSlideMenu}
         closeSlideMenu={closeSlideMenu} />
-        <Toolbar style={smDown ? { paddingTop: 0, paddingRight : 16, paddingLeft : 16 } : {paddingTop : 10, paddingRight : 0, paddingLeft : 0}}>
+      }
+
+      <Toolbar style={{ paddingTop: smDown ? 0 : 10, paddingRight: 16, paddingLeft: 16 }}>
         <div style={{ flexGrow: 1, display: smDown ? '' : 'none' }}>
           <div style={{ backgroundImage: `url(${discordLogoMobile})`, backgroundPosition: 'center', backgroundSize: 'cover', height: 30, width: 90 }} />
         </div>
-        <MenuIcon style={{ color: 'white', display: smDown ? '' : 'none' }} onClick={() => { setShowSlideMenu(true)}} />
+        <MenuIcon style={{ color: 'white', display: smDown ? '' : 'none' }} onClick={() => { setShowSlideMenu(true) }} />
         <div style={{ backgroundImage: `url(${discordLogo})`, backgroundPosition: 'center', backgroundSize: 'cover', height: 50, width: 50, display: smDown ? 'none' : '' }} />
         <div style={{ paddingLeft: 10, flexGrow: 1, display: smDown ? 'none' : 'flex' }}>
           <Button style={buttonStyle}>
