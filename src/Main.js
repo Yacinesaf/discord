@@ -11,7 +11,7 @@ import BottomLinksMobile from './BottomLinksMobile';
 import { useParams } from 'react-router-dom'
 
 function Main() {
-  let { title } = useParams('Windows');
+  let { title } = useParams();
   const theme = useTheme(); 
   const smDown = useMediaQuery(theme.breakpoints.down('sm'));
   const mdDown = useMediaQuery(theme.breakpoints.down('md'));

@@ -13,7 +13,7 @@ function TextNextToFloatingImage({title}) {
   return (
       <div>
         <p style={{ color: 'white', display: 'block', fontWeight: 500, margin: 0, fontSize : 25 }} >
-          {`Get Discord for ${title}`}
+          { title ? `Get Discord for ${title}` : 'Get Discord for Windows'}
         </p>
         <div style={{ display: 'flex', paddingTop: 5, justifyContent : smDown ? 'center' : '' }}>
           <Typography style={{ color: 'hsla(0,0%,100%,.6)', fontSize: 12 }} >
