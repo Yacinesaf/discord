@@ -1,6 +1,4 @@
 import React from 'react';
-import { useTheme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { bottomLinks } from './bottomPageLinks'
 import { Grid, Typography } from '@material-ui/core';
 import logo from './Discord-Logo-White.svg'
@@ -8,8 +6,6 @@ import { Link } from 'react-router-dom';
 
 function BottomLinks() {
 
-  const theme = useTheme();
-  const xsOnly = useMediaQuery(theme.breakpoints.only('xs'));
   const bottomLinksKeys = Object.keys(bottomLinks)
 
   return (
